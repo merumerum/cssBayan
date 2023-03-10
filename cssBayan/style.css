@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  width: 1000px;
+  margin: 50px auto;
+}
+
+.icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.image img {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 350px;
+  height: 350px;
+}
+
+.title {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
