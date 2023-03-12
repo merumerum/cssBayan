@@ -1,19 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&family=Shantell+Sans&family=Yeseva+One&display=swap');
+
 body {
   margin: 0;
+  background: linear-gradient(-45deg, #80ed99, #fee440, #bc4749, #b8c0ff);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+}
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
 
 * {
-  font-family: 'Roboto', sans-serif;
-  color: red;
+  font-family: 'Yeseva One', cursive;
+  color: #fefae0;
 }
- 
+
 h1 {
-  color:black;
+  color:#003566;
+  font-family: 'Rampart One', cursive;
+  font-size: 3rem;
+  margin: 0 auto 1rem auto;
 }
+
 .container {
-  width: 800px;
-  margin: 50px auto;
+  width: 45vw;
+  margin: 3.1rem auto;
   cursor: pointer;
+}
+
+.border {
+  display: block;
+  height: 0.2rem;
+  width: 100%;
+  background-color: #ce6a85;
+  border-radius: 0.2rem;
 }
 
 .item {
@@ -22,10 +50,14 @@ h1 {
 }
 .item-icon {
   display: none;
-  width: 18px;
-  height: 18px;
   transition: 0.5s;
+
 }
+
+.item-icon i {
+  color: #000189;
+}
+
 label {
   cursor: pointer;
 }
@@ -39,7 +71,8 @@ label {
 }
 
 .item-title h3 {
-  margin: 10px;
+  margin: 1rem 0;
+  font-size: 1.2rem;
 }
 
 
@@ -64,21 +97,27 @@ label {
   display: block;
 }
 
-.container:hover .item .item-title h3 {
-  color: black;
+.container:hover .item-title h3 {
+  color: #000189;
 }
+
 
 .item-input:checked ~ .item-image .image {
   opacity: 1;
   display: block;
-  margin: 35px auto 40px auto;
-  width: 300px;
-  height: 300px;
+  margin: 2.2rem auto 2.5rem auto;
+  width: 19rem;  
+  height: 19rem;
   transform: scale(1.2);
 }
 
-.item-input:checked ~ .item-title h3{
-  color: black;
+.item:active .item-title h3,
+.item:active .item-icon i  {
+  color: #fefae0;
+}
+
+.item-input:checked + .item-title h3 {
+  color:#000189;
 }
 
 .item-input:checked ~ .item-title .item-icon,
@@ -86,13 +125,13 @@ label {
   transform: rotate(45deg);
 }
 
-
-.item-input:hover ~ .item-image .image ,
+.item-input:hover ~ .item-image .image,
 .item:hover .item-image .image {
   opacity: 1;
   display: block;
-  margin: 35px auto 40px auto;
-  width: 300px;
-  height: 300px;
+  margin: 2.2rem auto 2.5rem auto;
+  width: 19rem;  
+  height: 19rem;
   transform: scale(1.2);
 };
+
