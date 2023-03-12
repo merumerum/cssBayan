@@ -4,30 +4,46 @@ body {
 
 * {
   font-family: 'Roboto', sans-serif;
+  color: red;
 }
-
+ 
+h1 {
+  color:black;
+}
 .container {
   width: 800px;
   margin: 50px auto;
+  cursor: pointer;
 }
-
-.icon img {
-  display: none;
-  width: 20px;
-  height: 20px;
-}
-
-.icon_close img {
-  display: none;
-  width: 15px;
-  height: 15px;
-} 
 
 .item {
   overflow: hidden;
+  cursor: pointer;
+}
+.item-icon {
+  display: none;
+  width: 18px;
+  height: 18px;
+  transition: 0.5s;
+}
+label {
+  cursor: pointer;
 }
 
-.img_wrap .image {
+.item-title {
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.item-title h3 {
+  margin: 10px;
+}
+
+
+.item-image .image {
   display: block;
   opacity: 0;
   width: 0;
@@ -36,19 +52,7 @@ body {
   transition: 0.7s;
 }
 
-.title {
- display: block;
- display: flex;
- justify-content: space-between;
- align-items: center;
- cursor: pointer;
-}
-
-.title h3 {
-  margin: 10px;
-}
-
-.input {
+.item-input {
   width: 0;
   height: 0;
   -webkit-appearance: none;
@@ -56,7 +60,15 @@ body {
   position: absolute;
 }
 
-.input:checked + .img_wrap .image {
+.container:hover .item .item-icon {
+  display: block;
+}
+
+.container:hover .item .item-title h3 {
+  color: black;
+}
+
+.item-input:checked ~ .item-image .image {
   opacity: 1;
   display: block;
   margin: 35px auto 40px auto;
@@ -65,8 +77,18 @@ body {
   transform: scale(1.2);
 }
 
-.input:hover + .img_wrap .image,
-.item:hover .image {
+.item-input:checked ~ .item-title h3{
+  color: black;
+}
+
+.item-input:checked ~ .item-title .item-icon,
+.item-input:hover ~ .item-title .item-icon {
+  transform: rotate(45deg);
+}
+
+
+.item-input:hover ~ .item-image .image ,
+.item:hover .item-image .image {
   opacity: 1;
   display: block;
   margin: 35px auto 40px auto;
